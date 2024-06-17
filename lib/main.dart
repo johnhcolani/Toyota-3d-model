@@ -14,11 +14,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        primarySwatch: Colors.blue,
 
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        textTheme:  TextTheme(
+          titleLarge: TextStyle(color: Colors.black.withOpacity(0.5),fontSize: 64,fontWeight: FontWeight.bold,height: 1),
+          titleMedium: const TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold,height: 1),
+          bodyLarge: TextStyle(color: Colors.red.withOpacity(0.8),fontSize: 32,fontWeight: FontWeight.bold,),
+          bodyMedium: const TextStyle(color: Colors.black),
+          bodySmall: const TextStyle(color: Colors.black),
+        ),
       ),
-      home: const MyHomeScreen(),
+      debugShowCheckedModeBanner: false,
+
+      home: MyHomeScreen(),
     );
   }
 }
