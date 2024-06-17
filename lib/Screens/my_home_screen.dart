@@ -11,7 +11,7 @@ class MyHomeScreen extends StatelessWidget {
     OnBoardingModel("Toyota", "Three-quarter Rear View"),
   ];
   PageController pageController = PageController();
-
+  O3DController o3dController = O3DController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +22,19 @@ class MyHomeScreen extends StatelessWidget {
               Colors.grey,
             ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
         child: Stack(children: [
-
+         Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: AspectRatio(
+              aspectRatio: 1 / 1,
+              child: O3D.asset(
+                src: 'assets/toyota.glb',
+                controller: o3dController,
+                cameraOrbit: CameraOrbit(90, 90, 100),
+              ),
+            ),
+          ),
           Positioned.fill(
               top: 80,
               child: Padding(
